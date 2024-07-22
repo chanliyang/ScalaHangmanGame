@@ -1,4 +1,4 @@
-object Test {
+object carOldNew {
   def main (args:Array[String]): Unit = {
     println("hello")
   }
