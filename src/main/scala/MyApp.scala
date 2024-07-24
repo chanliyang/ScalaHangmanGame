@@ -6,5 +6,6 @@ object xxx {
     val b = 2
     val sum = a+b
     println(sum)
+
   }
 }
