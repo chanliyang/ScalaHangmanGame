@@ -1,6 +1,6 @@
 object xxx {
   def main(args: Array[String]): Unit ={
-    println("Hi")
+    println("Hi everyone")
 
     val a = 1
     val b = 2
