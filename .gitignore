@@ -1,4 +1,5 @@
-.bsp
-.idea
+.bsp/
+.idea/
+.idea/workspace.xml
 project
 target
