@@ -1,11 +1,5 @@
 object xxx {
   def main(args: Array[String]): Unit ={
-    println("Testing")
-
-    val a = 1
-    val b = 2
-    val sum = a+b
-    println(sum)
-
+    println("Try again")
   }
 }
