@@ -1,29 +1,38 @@
 package ch.makery.address
-
-import ch.makery.address.MainApp.loader
 import scalafx.application.JFXApp
 import scalafx.application.JFXApp.PrimaryStage
-import scalafxml.core.{FXMLLoader, FXMLView, NoDependencyResolver}
 import scalafx.scene.Scene
-import scalafx.scene.layout.BorderPane
+import scalafx.Includes._
+import scalafxml.core.{NoDependencyResolver, FXMLView, FXMLLoader}
+import javafx.{scene => jfxs}
 
 object MainApp extends JFXApp {
 
-  val rootResource = getClass.getResource("/ch/makery/address/view/Main.fxml")
-  val root = FXMLView(rootResource, NoDependencyResolver)
-
-  val primaryStage: PrimaryStage = new PrimaryStage {
-    title.value = "Hangman Game"
-    scene = new Scene(root.asInstanceOf[BorderPane])
+  val rootResource = getClass.getResource("view/RootLayout.fxml")
+  val loader = new FXMLLoader(rootResource, NoDependencyResolver)
+  loader.load();
+  val roots = loader.getRoot[jfxs.layout.BorderPane]
+  stage = new PrimaryStage {
+    title = "HangmanGame"
+    scene = new Scene {
+      root = roots
+    }
   }
 
-  def showPersonOverview() = {
-    val resource = getClass.getResource("view/PersonOverview.fxml")
+  def showGame() = {
+    val resource = getClass.getResource("view/Game.fxml")
     val loader = new FXMLLoader(resource, NoDependencyResolver)
     loader.load();
     val roots = loader.getRoot[jfxs.layout.AnchorPane]
     this.roots.setCenter(roots)
   }
 
-  stage = primaryStage
+  def showMain() = {
+    val resource = getClass.getResource("view/Main.fxml")
+    val loader = new FXMLLoader(resource, NoDependencyResolver)
+    loader.load();
+    val roots = loader.getRoot[jfxs.layout.AnchorPane]
+    this.roots.setCenter(roots)
+  }
+  showMain()
 }
