@@ -19,13 +19,25 @@ object MainApp extends JFXApp {
     }
   }
 
-  def showGame() = {
+
+  def showLevel() = {
+    val resource = getClass.getResource("view/Level.fxml")
+    val loader = new FXMLLoader(resource, NoDependencyResolver)
+    loader.load();
+    val roots = loader.getRoot[jfxs.layout.AnchorPane]
+    this.roots.setCenter(roots)
+  }
+
+
+  def showGame(word: String) = {
     val resource = getClass.getResource("view/Game.fxml")
     val loader = new FXMLLoader(resource, NoDependencyResolver)
     loader.load();
     val roots = loader.getRoot[jfxs.layout.AnchorPane]
     this.roots.setCenter(roots)
   }
+
+
 
   def showMain() = {
     val resource = getClass.getResource("view/Main.fxml")
@@ -34,5 +46,9 @@ object MainApp extends JFXApp {
     val roots = loader.getRoot[jfxs.layout.AnchorPane]
     this.roots.setCenter(roots)
   }
+
   showMain()
+
+
+
 }

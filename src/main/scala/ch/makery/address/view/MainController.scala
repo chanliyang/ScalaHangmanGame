@@ -8,10 +8,6 @@ import scalafxml.core.macros.sfxml
 class MainController(){
 
   def getStart(): Unit={
-    MainApp.showGame()
-  }
-
-  def getWelcome(): Unit={
-    MainApp.showMain()
+    MainApp.showLevel()
   }
 }

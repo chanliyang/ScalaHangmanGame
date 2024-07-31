@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.GameController">
    <children>
-      <TextField layoutX="376.0" layoutY="219.0" />
+      <TextField fx:id="charTextField" layoutX="376.0" layoutY="219.0" onAction="#initialize" />
       <Text layoutX="378.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter a character here:">
          <font>
             <Font name="Segoe Print" size="12.0" />
          </font>
       </Text>
       <ImageView fitHeight="297.0" fitWidth="279.0" layoutX="30.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="424.0" layoutY="263.0" mnemonicParsing="false" text="Enter">
+      <Button fx:id="check" layoutX="424.0" layoutY="263.0" mnemonicParsing="false" onAction="#submit" text="Check">
          <font>
             <Font name="Segoe Print" size="12.0" />
          </font>
       </Button>
-      <Text layoutX="405.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#getLevel" text="back" />
+      <Label fx:id="wordLabel" layoutX="391.0" layoutY="91.0" text="Label">
          <font>
-            <Font name="Segoe Print" size="41.0" />
+            <Font name="Segoe Print" size="45.0" />
          </font>
-      </Text>
+      </Label>
    </children>
 </AnchorPane>
