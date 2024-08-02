@@ -51,10 +51,10 @@ class GameController(
         charTextField.clear()
 
         if (guessedWord.mkString == word1) {
-          wordLabel.text = "Congratulations! You've guessed the word!"
+          wordLabel.text = "Yay! You guessed the word!"
           disableInput()
         } else if (remainingGuesses == 0) {
-          wordLabel.text = "You've run out of guesses. You lost!"
+          wordLabel.text = "No more guesses. You lost!"
           disableInput()
           retryButton.visible = true
         }
