@@ -1,41 +1,89 @@
 package ch.makery.address.view
 
 import ch.makery.address.MainApp
-import javafx.fxml.FXML
-import javafx.scene.control.{Label, TextField}
+import scalafx.scene.control.{Label, TextField, Button, Alert}
+import scalafx.scene.image.{Image, ImageView}
 import scalafxml.core.macros.sfxml
+import scalafx.Includes._
 
 @sfxml
-class GameController {
+class GameController(
+                      private val wordLabel: Label,
+                      private val wordGuessing: Label,
+                      private val charTextField: TextField,
+                      private val imageView: ImageView,
+                      private val retryButton: Button
+                    ) {
 
   private val word1 = "tree"
-
-  def getLevel(): Unit = {
-    // Go back to level page
-    MainApp.showLevel()
-  }
-
-  @FXML
-  private var wordLabel: Label = _
-  @FXML
-  private var charTextField: TextField = _
+  private var guessedWord = Array.fill(word1.length)('*')
+  private var guessedChars: String = ""
+  private var remainingGuesses = 5
 
   def initialize(): Unit = {
-    wordLabel.setText("Guess the word:")
+    wordLabel.text = "Guess the word:"
+    wordGuessing.text = guessedWord.mkString
+    retryButton.visible = false
+    imageView.image = new Image("images/A0.png")
   }
 
-  @FXML
   def submit(): Unit = {
-    if (charTextField != null && wordLabel != null) {
-      val enteredChar = charTextField.getText().charAt(0)
-      if (word1.contains(enteredChar)) {
-        wordLabel.setText(s"The character '$enteredChar' is in the word!")
+    if (charTextField.text.value.nonEmpty && remainingGuesses > 0) {
+      val enteredChar = charTextField.text.value.charAt(0)
+
+      if (guessedChars.contains(enteredChar)) {
+        wordLabel.text = s"You already guessed '$enteredChar'. Try another letter."
       } else {
-        wordLabel.setText(s"The character '$enteredChar' is not in the word.")
+        guessedChars += enteredChar
+
+        if (word1.contains(enteredChar)) {
+          wordLabel.text = s"'$enteredChar' is in the word!"
+          for (i <- word1.indices) {
+            if (word1(i) == enteredChar) guessedWord(i) = enteredChar
+          }
+          wordGuessing.text = guessedWord.mkString
+        } else {
+          remainingGuesses -= 1
+          wordLabel.text = s"'$enteredChar' is NOT in the word."
+          updateImageView()
+        }
+
+        charTextField.clear()
+
+        if (guessedWord.mkString == word1) {
+          wordLabel.text = "Congratulations! You've guessed the word!"
+          disableInput()
+        } else if (remainingGuesses == 0) {
+          wordLabel.text = "You've run out of guesses. You lost!"
+          disableInput()
+          retryButton.visible = true
+        }
       }
-      charTextField.clear()
-    } else {
-      println("charTextField or wordLabel is not initialized")
     }
+  }
+
+  def updateImageView(): Unit = {
+    val imagePath = s"images/A${5 - remainingGuesses}.png"
+    imageView.image = new Image(imagePath)
+  }
+
+  def disableInput(): Unit = {
+    charTextField.disable = true
+    retryButton.visible = true
+  }
+
+  def retry(): Unit = {
+    guessedWord = Array.fill(word1.length)('*')
+    guessedChars = ""
+    remainingGuesses = 5
+    wordLabel.text = "Guess the word:"
+    wordGuessing.text = guessedWord.mkString
+    charTextField.disable = false
+    retryButton.visible = false
+    imageView.image = new Image("images/A0.png")
+  }
+
+  def getLevel(): Unit = {
+    MainApp.showLevel()
   }
 }
