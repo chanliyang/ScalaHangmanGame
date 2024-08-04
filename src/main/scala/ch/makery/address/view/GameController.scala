@@ -4,18 +4,20 @@ import ch.makery.address.MainApp
 import scalafx.scene.control.{Label, TextField, Button, Alert}
 import scalafx.scene.image.{Image, ImageView}
 import scalafxml.core.macros.sfxml
-import scalafx.Includes._
 
 @sfxml
 class GameController(
                       private val wordLabel: Label,
                       private val wordGuessing: Label,
+                      private val GuessLeft: Label,
                       private val charTextField: TextField,
                       private val imageView: ImageView,
                       private val retryButton: Button
                     ) {
 
   private val word1 = "tree"
+  private val levelnumber = 2
+
   private var guessedWord = Array.fill(word1.length)('*')
   private var guessedChars: String = ""
   private var remainingGuesses = 5
@@ -24,8 +26,10 @@ class GameController(
     wordLabel.text = "Guess the word:"
     wordGuessing.text = guessedWord.mkString
     retryButton.visible = false
-    imageView.image = new Image("images/A0.png")
+    imageView.image = new Image(s"Images/Level${levelnumber}/A0.png")
+    GuessLeft.text = s"Guesses left: $remainingGuesses"
   }
+
 
   def submit(): Unit = {
     if (charTextField.text.value.nonEmpty && remainingGuesses > 0) {
@@ -46,6 +50,10 @@ class GameController(
           remainingGuesses -= 1
           wordLabel.text = s"'$enteredChar' is NOT in the word."
           updateImageView()
+
+          if (GuessLeft != null) { // Check if GuessLeft is not null
+            GuessLeft.text = s"Guesses left: $remainingGuesses"
+          }
         }
 
         charTextField.clear()
@@ -62,8 +70,9 @@ class GameController(
     }
   }
 
+
   def updateImageView(): Unit = {
-    val imagePath = s"images/A${5 - remainingGuesses}.png"
+    val imagePath = s"Images/Level${levelnumber}/A${5 - remainingGuesses}.png"
     imageView.image = new Image(imagePath)
   }
 
@@ -78,9 +87,10 @@ class GameController(
     remainingGuesses = 5
     wordLabel.text = "Guess the word:"
     wordGuessing.text = guessedWord.mkString
+    GuessLeft.text = s"Guesses left: $remainingGuesses"
     charTextField.disable = false
     retryButton.visible = false
-    imageView.image = new Image("images/A0.png")
+    imageView.image = new Image(s"Images/Level${levelnumber}/A0.png")
   }
 
   def getLevel(): Unit = {

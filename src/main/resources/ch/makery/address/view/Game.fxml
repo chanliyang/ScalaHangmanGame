@@ -29,16 +29,17 @@
          </font>
       </Button>
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#getLevel" text="back" />
-      <Label fx:id="wordLabel" layoutX="367.0" layoutY="158.0" text="x" textAlignment="CENTER">
+      <Label fx:id="wordLabel" layoutX="367.0" layoutY="158.0" textAlignment="CENTER">
          <font>
             <Font name="Segoe Print" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="wordGuessing" layoutX="439.0" layoutY="67.0" text="?" textAlignment="CENTER">
+      <Label fx:id="wordGuessing" layoutX="382.0" layoutY="67.0" text="Guess" textAlignment="CENTER">
          <font>
             <Font name="Perpetua Titling MT Bold" size="42.0" />
          </font>
       </Label>
       <Button fx:id="retryButton" layoutX="424.0" layoutY="324.0" mnemonicParsing="false" onAction="#retry" text="Retry" />
+      <Label fx:id="GuessLeft" layoutX="432.0" layoutY="44.0" text="Guess left: 5" />
    </children>
 </AnchorPane>

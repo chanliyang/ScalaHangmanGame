@@ -24,22 +24,22 @@
             <Font name="Script MT Bold" size="49.0" />
          </font>
       </Text>
-      <Button layoutX="168.0" layoutY="200.0" mnemonicParsing="false" onAction="#handleLevel1" prefHeight="48.0" prefWidth="65.0" text="Level 2" textFill="#ff2121">
+      <Button layoutX="168.0" layoutY="200.0" mnemonicParsing="false" onAction="#handleLevel2" prefHeight="48.0" prefWidth="65.0" text="Level 2" textFill="#ff2121">
          <font>
             <Font name="Script MT Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="253.0" layoutY="83.0" mnemonicParsing="false" onAction="#handleLevel1" prefHeight="48.0" prefWidth="65.0" text="Level 3" textFill="#ff1616">
+      <Button layoutX="253.0" layoutY="83.0" mnemonicParsing="false" onAction="#handleLevel3" prefHeight="48.0" prefWidth="65.0" text="Level 3" textFill="#ff1616">
          <font>
             <Font name="Script MT Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="357.0" layoutY="160.0" mnemonicParsing="false" onAction="#handleLevel1" prefHeight="48.0" prefWidth="65.0" text="Level 4" textFill="#ff0b0b">
+      <Button layoutX="357.0" layoutY="160.0" mnemonicParsing="false" onAction="#handleLevel4" prefHeight="48.0" prefWidth="65.0" text="Level 4" textFill="#ff0b0b">
          <font>
             <Font name="Script MT Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="493.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleLevel1" prefHeight="48.0" prefWidth="65.0" text="Level 5" textFill="#ff1111">
+      <Button layoutX="493.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleLevel5" prefHeight="48.0" prefWidth="65.0" text="Level 5" textFill="#ff1111">
          <font>
             <Font name="Script MT Bold" size="14.0" />
          </font>
