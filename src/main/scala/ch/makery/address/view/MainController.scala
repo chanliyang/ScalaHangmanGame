@@ -10,4 +10,8 @@ class MainController(){
   def getStart(): Unit={
     MainApp.showLevel()
   }
+
+  def getInstruction(): Unit={
+    MainApp.showInstruction()
+  }
 }

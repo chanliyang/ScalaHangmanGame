@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.InstructionController">
+   <children>
+      <ImageView fitHeight="419.0" fitWidth="610.0" layoutX="-5.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Images/background/LevelBackground.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imageView" fitHeight="239.0" fitWidth="385.0" layoutX="23.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#getMain" text="Back to Main" />
+      <Label fx:id="instruction" layoutX="14.0" layoutY="357.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Perpetua Titling MT Bold" size="14.0" />
+         </font></Label>
+      <Text layoutX="229.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How to play">
+         <font>
+            <Font name="Perpetua Titling MT Bold" size="42.0" />
+         </font>
+      </Text>
+      <Button fx:id="NextInstruction" layoutX="456.0" layoutY="169.0" mnemonicParsing="false" onAction="#showInstruction" text="Next instruction" />
+      <Text fill="WHITE" layoutX="14.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Instruction:">
+         <font>
+            <Font name="Perpetua Bold" size="28.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

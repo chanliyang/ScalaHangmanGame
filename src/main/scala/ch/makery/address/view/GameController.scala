@@ -1,26 +1,45 @@
+
+
 package ch.makery.address.view
 
 import ch.makery.address.MainApp
-import scalafx.scene.control.{Label, TextField, Button, Alert}
+import scalafx.scene.control.{Label, TextField, Button}
 import scalafx.scene.image.{Image, ImageView}
 import scalafxml.core.macros.sfxml
 
 @sfxml
 class GameController(
-                      private val wordLabel: Label,
-                      private val wordGuessing: Label,
-                      private val GuessLeft: Label,
-                      private val charTextField: TextField,
-                      private val imageView: ImageView,
-                      private val retryButton: Button
+                      val wordLabel: Label,
+                      val wordGuessing: Label,
+                      val GuessLeft: Label,
+                      val charTextField: TextField,
+                      val imageView: ImageView,
+                      val retryButton: Button
                     ) {
 
-  private val word1 = "tree"
-  private val levelnumber = 2
+
+  private var word1: String = _
+  private var levelnumber: Int = _
+
+  def setWord(newWord: String): Unit = {
+    word1 = newWord
+    val guessedWord = Array.fill(word1.length)('*')
+    wordGuessing.text = guessedWord.mkString
+  }
+
+  def setLevelNumber(level: Int): Unit = {
+    levelnumber = level
+    imageView.image = new Image(s"Images/Level${levelnumber}/A0.png")
+  }
+
+
+
 
   private var guessedWord = Array.fill(word1.length)('*')
   private var guessedChars: String = ""
   private var remainingGuesses = 5
+
+
 
   def initialize(): Unit = {
     wordLabel.text = "Guess the word:"

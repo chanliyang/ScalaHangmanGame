@@ -1,10 +1,15 @@
 package ch.makery.address
+import ch.makery.address.view.GameController
 import scalafx.application.JFXApp
 import scalafx.application.JFXApp.PrimaryStage
 import scalafx.scene.Scene
 import scalafx.Includes._
-import scalafxml.core.{NoDependencyResolver, FXMLView, FXMLLoader}
+import scalafxml.core.{FXMLLoader, FXMLView, NoDependencyResolver}
 import javafx.{scene => jfxs}
+import scalafx.scene.layout.AnchorPane
+
+
+
 
 object MainApp extends JFXApp {
 
@@ -29,13 +34,23 @@ object MainApp extends JFXApp {
   }
 
 
-  def showGame() = {
+  def showGame(word: String, levelNumber: Int): Unit = {
+    println(word)  // checking only
+    println(levelNumber)
     val resource = getClass.getResource("view/Game.fxml")
     val loader = new FXMLLoader(resource, NoDependencyResolver)
-    loader.load()
-    val roots = loader.getRoot[jfxs.layout.AnchorPane]
+    val roots = loader.load[jfxs.layout.AnchorPane]()
     this.roots.setCenter(roots)
+    val gameController = loader.getController[GameController]
+    gameController.setWord(word)
+    gameController.setLevelNumber(levelNumber)
   }
+
+
+
+
+
+
 
 
 
@@ -46,6 +61,17 @@ object MainApp extends JFXApp {
     val roots = loader.getRoot[jfxs.layout.AnchorPane]
     this.roots.setCenter(roots)
   }
+
+
+  def showInstruction() = {
+    val resource = getClass.getResource("view/Instruction.fxml")
+    val loader = new FXMLLoader(resource, NoDependencyResolver)
+    loader.load()
+    val roots = loader.getRoot[jfxs.layout.AnchorPane]
+    this.roots.setCenter(roots)
+  }
+
+
 
   showMain()
 
