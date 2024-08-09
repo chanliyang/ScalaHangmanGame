@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.GameController5">
+    <children>
+        <ImageView fitHeight="405.0" fitWidth="615.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../Images/background/Level5background.png" />
+            </image>
+        </ImageView>
+        <TextField fx:id="charTextField" layoutX="376.0" layoutY="219.0" onAction="#submit" />
+        <Text fill="WHITE" layoutX="378.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter a character here:">
+            <font>
+                <Font name="Segoe Print" size="12.0" />
+            </font>
+        </Text>
+        <ImageView fx:id="imageView" fitHeight="297.0" fitWidth="279.0" layoutX="35.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true" />
+        <Button fx:id="check" layoutX="424.0" layoutY="263.0" mnemonicParsing="false" onAction="#submit" text="Check">
+            <font>
+                <Font name="Segoe Print" size="12.0" />
+            </font>
+        </Button>
+        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#getLevel" text="back" />
+        <Label fx:id="wordLabel" layoutX="367.0" layoutY="158.0" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font name="Segoe Print" size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="wordGuessing" layoutX="382.0" layoutY="67.0" text="Guess" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font name="Perpetua Titling MT Bold" size="42.0" />
+            </font>
+        </Label>
+        <Button fx:id="retryButton" layoutX="429.0" layoutY="324.0" mnemonicParsing="false" onAction="#retry" text="Retry" />
+        <Label fx:id="GuessLeft" layoutX="432.0" layoutY="44.0" text="Guess left: 5" textFill="WHITE" />
+      <Text fill="#ffe500" layoutX="14.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tips: Causing fear or anxiety; frightening" textAlignment="RIGHT" wrappingWidth="584.8033752441406">
+         <font>
+            <Font name="Snap ITC" size="16.0" />
+         </font>
+      </Text>
+    </children>
+</AnchorPane>

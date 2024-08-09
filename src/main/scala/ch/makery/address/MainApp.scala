@@ -1,5 +1,5 @@
 package ch.makery.address
-import ch.makery.address.view.GameController
+import ch.makery.address.view.GameController1
 import scalafx.application.JFXApp
 import scalafx.application.JFXApp.PrimaryStage
 import scalafx.scene.Scene
@@ -38,31 +38,45 @@ object MainApp extends JFXApp {
   }
 
 
-//  def showGame(word: String, levelNumber: Int): Unit = {
-//    println(word)  // checking only
-//    println(levelNumber)
-//    val resource = getClass.getResource("view/Game.fxml")
-//    val loader = new FXMLLoader(resource, NoDependencyResolver)
-//    val roots = loader.load[jfxs.layout.AnchorPane]()
-//    this.roots.setCenter(roots)
-//    val gameController = loader.getController[GameController]
-//    gameController.setWord(word)
-//    gameController.setLevelNumber(levelNumber)
-//
-//  }
-
-  def showGame(levelNumber: Int): Unit = {
-    val resource = getClass.getResource("view/Game.fxml")
+  def showGame1(): Unit = {
+    val resource = getClass.getResource("view/Game1.fxml")
     val loader = new FXMLLoader(resource, NoDependencyResolver)
     loader.load()
     val roots = loader.getRoot[jfxs.layout.AnchorPane]
-    val controller = loader.getController[GameController]
-    controller.setLevelNumber(levelNumber)
-    controller.initialize()
     this.roots.setCenter(roots)
   }
 
+  def showGame2(): Unit = {
+    val resource = getClass.getResource("view/Game2.fxml")
+    val loader = new FXMLLoader(resource, NoDependencyResolver)
+    loader.load()
+    val roots = loader.getRoot[jfxs.layout.AnchorPane]
+    this.roots.setCenter(roots)
+  }
 
+  def showGame3(): Unit = {
+    val resource = getClass.getResource("view/Game3.fxml")
+    val loader = new FXMLLoader(resource, NoDependencyResolver)
+    loader.load()
+    val roots = loader.getRoot[jfxs.layout.AnchorPane]
+    this.roots.setCenter(roots)
+  }
+
+  def showGame4(): Unit = {
+    val resource = getClass.getResource("view/Game4.fxml")
+    val loader = new FXMLLoader(resource, NoDependencyResolver)
+    loader.load()
+    val roots = loader.getRoot[jfxs.layout.AnchorPane]
+    this.roots.setCenter(roots)
+  }
+
+  def showGame5(): Unit = {
+    val resource = getClass.getResource("view/Game5.fxml")
+    val loader = new FXMLLoader(resource, NoDependencyResolver)
+    loader.load()
+    val roots = loader.getRoot[jfxs.layout.AnchorPane]
+    this.roots.setCenter(roots)
+  }
 
 
   def showMain() = {
