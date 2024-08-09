@@ -7,23 +7,23 @@ import scalafxml.core.macros.sfxml
 class LevelController {
 
   def handleLevel1(): Unit = {
-    MainApp.showGame("tree", 1)
+    MainApp.showGame(1)
   }
 
   def handleLevel2(): Unit = {
-    MainApp.showGame("apple", 2)
+    MainApp.showGame(2)
   }
 
   def handleLevel3(): Unit = {
-    MainApp.showGame("orange", 3)
+    MainApp.showGame(3)
   }
 
   def handleLevel4(): Unit = {
-    MainApp.showGame("banana", 4)
+    MainApp.showGame(4)
   }
 
   def handleLevel5(): Unit = {
-    MainApp.showGame("grape", 5)
+    MainApp.showGame(5)
   }
 
   def getMain(): Unit = {

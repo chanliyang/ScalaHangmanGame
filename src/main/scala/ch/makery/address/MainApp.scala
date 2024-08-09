@@ -6,6 +6,7 @@ import scalafx.scene.Scene
 import scalafx.Includes._
 import scalafxml.core.{FXMLLoader, FXMLView, NoDependencyResolver}
 import javafx.{scene => jfxs}
+import scalafx.scene.image.Image
 import scalafx.scene.layout.AnchorPane
 
 
@@ -18,9 +19,12 @@ object MainApp extends JFXApp {
   loader.load();
   val roots = loader.getRoot[jfxs.layout.BorderPane]
   stage = new PrimaryStage {
-    title = "HangmanGame"
+    icons += new Image(getClass.getResourceAsStream("/Images/icon.png"))
+    title = "Guess the word (Hangman Game)"
     scene = new Scene {
       root = roots
+
+
     }
   }
 
@@ -34,22 +38,29 @@ object MainApp extends JFXApp {
   }
 
 
-  def showGame(word: String, levelNumber: Int): Unit = {
-    println(word)  // checking only
-    println(levelNumber)
+//  def showGame(word: String, levelNumber: Int): Unit = {
+//    println(word)  // checking only
+//    println(levelNumber)
+//    val resource = getClass.getResource("view/Game.fxml")
+//    val loader = new FXMLLoader(resource, NoDependencyResolver)
+//    val roots = loader.load[jfxs.layout.AnchorPane]()
+//    this.roots.setCenter(roots)
+//    val gameController = loader.getController[GameController]
+//    gameController.setWord(word)
+//    gameController.setLevelNumber(levelNumber)
+//
+//  }
+
+  def showGame(levelNumber: Int): Unit = {
     val resource = getClass.getResource("view/Game.fxml")
     val loader = new FXMLLoader(resource, NoDependencyResolver)
-    val roots = loader.load[jfxs.layout.AnchorPane]()
+    loader.load()
+    val roots = loader.getRoot[jfxs.layout.AnchorPane]
+    val controller = loader.getController[GameController]
+    controller.setLevelNumber(levelNumber)
+    controller.initialize()
     this.roots.setCenter(roots)
-    val gameController = loader.getController[GameController]
-    gameController.setWord(word)
-    gameController.setLevelNumber(levelNumber)
   }
-
-
-
-
-
 
 
 

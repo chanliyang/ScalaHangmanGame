@@ -1,5 +1,3 @@
-
-
 package ch.makery.address.view
 
 import ch.makery.address.MainApp
@@ -17,29 +15,30 @@ class GameController(
                       val retryButton: Button
                     ) {
 
-
   private var word1: String = _
   private var levelnumber: Int = _
 
   def setWord(newWord: String): Unit = {
     word1 = newWord
-    val guessedWord = Array.fill(word1.length)('*')
-    wordGuessing.text = guessedWord.mkString
+    wordGuessing.text = Array.fill(word1.length)('*').mkString
   }
 
   def setLevelNumber(level: Int): Unit = {
     levelnumber = level
-    imageView.image = new Image(s"Images/Level${levelnumber}/A0.png")
+    word1 = level match {
+      case 1 => "apple"
+      case 2 => "orange"
+      case 3 => "banana"
+      case 4 => "dog"
+      case 5 => "fun"
+      case _ => "defaultWord"
+    }
+    setWord(word1)
   }
-
-
-
 
   private var guessedWord = Array.fill(word1.length)('*')
   private var guessedChars: String = ""
   private var remainingGuesses = 5
-
-
 
   def initialize(): Unit = {
     wordLabel.text = "Guess the word:"
@@ -48,7 +47,6 @@ class GameController(
     imageView.image = new Image(s"Images/Level${levelnumber}/A0.png")
     GuessLeft.text = s"Guesses left: $remainingGuesses"
   }
-
 
   def submit(): Unit = {
     if (charTextField.text.value.nonEmpty && remainingGuesses > 0) {
@@ -69,10 +67,7 @@ class GameController(
           remainingGuesses -= 1
           wordLabel.text = s"'$enteredChar' is NOT in the word."
           updateImageView()
-
-          if (GuessLeft != null) { // Check if GuessLeft is not null
-            GuessLeft.text = s"Guesses left: $remainingGuesses"
-          }
+          GuessLeft.text = s"Guesses left: $remainingGuesses"
         }
 
         charTextField.clear()
@@ -88,7 +83,6 @@ class GameController(
       }
     }
   }
-
 
   def updateImageView(): Unit = {
     val imagePath = s"Images/Level${levelnumber}/A${5 - remainingGuesses}.png"
