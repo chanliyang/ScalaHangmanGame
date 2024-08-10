@@ -23,9 +23,8 @@ object MainApp extends JFXApp {
     title = "Guess the word (Hangman Game)"
     scene = new Scene {
       root = roots
-
-
     }
+    resizable = false
   }
 
 

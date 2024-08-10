@@ -1,6 +1,7 @@
 package ch.makery.address.view
 
 import ch.makery.address.MainApp
+import ch.makery.address.MainApp.showInstruction
 import scalafx.scene.control.{Button, Label}
 import scalafx.scene.image.{Image, ImageView}
 import scalafxml.core.macros.sfxml

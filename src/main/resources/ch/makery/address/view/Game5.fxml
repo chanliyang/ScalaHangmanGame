@@ -22,19 +22,19 @@
                 <Font name="Segoe Print" size="12.0" />
             </font>
         </Text>
-        <ImageView fx:id="imageView" fitHeight="297.0" fitWidth="279.0" layoutX="35.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fx:id="imageView" fitHeight="297.0" fitWidth="279.0" layoutX="27.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true" />
         <Button fx:id="check" layoutX="424.0" layoutY="263.0" mnemonicParsing="false" onAction="#submit" text="Check">
             <font>
                 <Font name="Segoe Print" size="12.0" />
             </font>
         </Button>
         <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#getLevel" text="back" />
-        <Label fx:id="wordLabel" layoutX="367.0" layoutY="158.0" textAlignment="CENTER" textFill="WHITE">
+        <Label fx:id="wordLabel" layoutX="329.0" layoutY="158.0" prefHeight="28.0" prefWidth="279.0" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="Segoe Print" size="15.0" />
             </font>
         </Label>
-        <Label fx:id="wordGuessing" layoutX="382.0" layoutY="67.0" text="Guess" textAlignment="CENTER" textFill="WHITE">
+        <Label fx:id="wordGuessing" layoutX="402.0" layoutY="74.0" text="*****" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="Perpetua Titling MT Bold" size="42.0" />
             </font>

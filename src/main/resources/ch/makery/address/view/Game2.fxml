@@ -29,12 +29,12 @@
             </font>
         </Button>
         <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#getLevel" text="back" />
-        <Label fx:id="wordLabel" layoutX="35.0" layoutY="136.0" prefHeight="28.0" prefWidth="27.0" textAlignment="CENTER">
+        <Label fx:id="wordLabel" layoutX="24.0" layoutY="139.0" prefHeight="28.0" prefWidth="247.0" textAlignment="CENTER">
             <font>
                 <Font name="Segoe Print" size="15.0" />
             </font>
         </Label>
-        <Label fx:id="wordGuessing" layoutX="61.0" layoutY="61.0" text="Guess" textAlignment="CENTER">
+        <Label fx:id="wordGuessing" layoutX="77.0" layoutY="70.0" text="*****" textAlignment="CENTER">
             <font>
                 <Font name="Perpetua Titling MT Bold" size="42.0" />
             </font>
