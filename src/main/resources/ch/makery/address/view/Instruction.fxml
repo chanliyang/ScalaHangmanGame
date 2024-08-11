@@ -17,7 +17,7 @@
       </ImageView>
       <ImageView fx:id="imageView" fitHeight="239.0" fitWidth="385.0" layoutX="23.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true" />
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#getMain" text="Back to Main" />
-      <Label fx:id="instruction" layoutX="14.0" layoutY="357.0" text="Label" textFill="WHITE">
+      <Label fx:id="instruction" layoutX="14.0" layoutY="357.0" textFill="WHITE">
          <font>
             <Font name="Perpetua Titling MT Bold" size="14.0" />
          </font></Label>

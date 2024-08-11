@@ -1,5 +1,5 @@
 package ch.makery.address
-import ch.makery.address.view.GameController1
+import ch.makery.address.view.{GameController1, GameController2, GameController3, GameController4, GameController5}
 import scalafx.application.JFXApp
 import scalafx.application.JFXApp.PrimaryStage
 import scalafx.scene.Scene
@@ -35,6 +35,7 @@ object MainApp extends JFXApp {
     val roots = loader.getRoot[jfxs.layout.AnchorPane]
     this.roots.setCenter(roots)
   }
+
 
 
   def showGame1(): Unit = {
